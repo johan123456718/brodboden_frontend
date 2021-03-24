@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { ButtonGroup, ToggleButton, Form, Button, Navbar, Nav, FormControl, NavDropdown, Modal } from 'react-bootstrap';
+import './css/Navbar.css';
 class App extends Component{
 
   constructor(props){
@@ -28,30 +29,24 @@ class App extends Component{
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
+                <i class="fa fa-home homeIcon"/>
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
+              <i class="fa fa-envelope messageIcon"/>
+                <a class="nav-link" href="#">Message</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#">Disabled</a>
+              <i class="fa fa-bell notificationIcon"/>
+                <a class="nav-link" href="#">Notifications</a>
               </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            <div class="input-icons">
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
+                <i class="fa fa-search searchIcon"/>
+              </form>
+            </div>
           </div>
         </nav>
       </div>
