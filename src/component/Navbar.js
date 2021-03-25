@@ -21,7 +21,9 @@ class App extends Component{
     return (
       <div className="App">
         <div class ="navbar navbar-expand-lg navbar-dark bg-danger">
-          <a class="navbar-logo" href="#">Navbar</a>
+          <a class="navbar-logo" href="#">
+            <img src="./images/brodbodenicon.jpeg" class="rounded mx-auto d-block brodboden_icon" alt="Brödboden icon"/>
+          </a>
         </div>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-danger border-bottom border-secondary">
