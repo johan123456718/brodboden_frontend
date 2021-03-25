@@ -20,33 +20,41 @@ class App extends Component{
   render(){
     return (
       <div className="App">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">Navbar</a>
+        <div class ="navbar navbar-expand-lg navbar-dark bg-danger">
+          <a class="navbar-logo" href="#">Navbar</a>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger border-bottom border-secondary">
+
+        <a class = "icon-link" href = "https://www.instagram.com/brodboden/">
+          <i class="fa fa-instagram "/>
+        </a>
+
+        <a class = "icon-link" href = "https://www.facebook.com/brodboden">
+          <i class="fa fa-facebook-square"/>
+        </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto justify-content-center">
               <li class="nav-item active">
-                <i class="fa fa-home homeIcon"/>
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">Hem<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-              <i class="fa fa-envelope messageIcon"/>
-                <a class="nav-link" href="#">Message</a>
+                <a class="nav-link" href="#">Menu</a>
               </li>
               <li class="nav-item">
-              <i class="fa fa-bell notificationIcon"/>
-                <a class="nav-link" href="#">Notifications</a>
+                <a class="nav-link" href="#">Om oss</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Kontakta oss</a>
               </li>
             </ul>
-            <div class="input-icons">
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                <i class="fa fa-search searchIcon"/>
-              </form>
-            </div>
+            <i class="fa fa-shopping-cart"/>
+            <span className="badge" id='lblCartCount'> 0 </span>
+            <div class="hiddenBox"/>
           </div>
         </nav>
       </div>
