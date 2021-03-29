@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { ButtonGroup, ToggleButton, Form, Button, Navbar, Nav, FormControl, NavDropdown, Modal } from 'react-bootstrap';
+import { ButtonGroup, ToggleButton, Form, Button, Nav, FormControl, NavDropdown, Modal } from 'react-bootstrap';
 import './css/Navbar.css';
-class App extends Component{
+class Navbar extends Component{
 
   constructor(props){
     super(props);
@@ -20,13 +20,13 @@ class App extends Component{
   render(){
     return (
       <div className="App">
-        <div class ="navbar navbar-expand-lg navbar-dark bg-danger">
+        <div class ="navbar navbar-expand-lg navbar-dark bg">
           <a class="navbar-logo" href="#">
-            <img src="./images/brodbodenicon.jpeg" class="rounded mx-auto d-block brodboden_icon" alt="Brödboden icon"/>
+            <img src="./images/brodbodenicon.png" class="rounded mx-auto d-block brodboden_icon" alt="Brödboden icon"/>
           </a>
         </div>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-danger border-bottom border-secondary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg border-bottom border-secondary">
 
         <a class = "icon-link" href = "https://www.instagram.com/brodboden/">
           <i class="fa fa-instagram "/>
@@ -57,6 +57,7 @@ class App extends Component{
             <i class="fa fa-shopping-cart"/>
             <span className="badge" id='lblCartCount'> 0 </span>
             <div class="hiddenBox"/>
+            <div class="hiddenBox"/>
           </div>
         </nav>
       </div>
@@ -64,4 +65,4 @@ class App extends Component{
   }
 }
 
-export default App;
+export default Navbar;

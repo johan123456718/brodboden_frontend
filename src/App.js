@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { Component } from "react";
-import Navbar from './component/Navbar.js'
+import Navbar from './component/Navbar.js';
+import MiddleHomeScreen from './component/MiddleHomeScreen.js';
+import Footer from './component/Footer.js';
 class App extends Component{
 
   constructor(props){
@@ -21,7 +23,8 @@ class App extends Component{
     return (
       <div className="App">
         <Navbar/>
-
+        <MiddleHomeScreen/>
+        <Footer/>
       </div>
     );
   }
