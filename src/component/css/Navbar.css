@@ -1,6 +1,6 @@
 .navbar-nav {
   width: 100%;
-  text-align: center;
+  padding-right: 5%;
 }
 .navbar-logo{
   margin:auto;
@@ -25,6 +25,7 @@
   visibility:hidden;
   padding-right: 10px;
 }
+
 .icon-link, .icon-link:hover{
   color: black;
 }
@@ -48,17 +49,37 @@
   border-width:0.5px !important;
 }
 .brodboden_icon{
-  height: auto;
-  width: auto;
+  height: 80px;
+  width: 200px;
 }
 
 .fa-facebook, .fa-facebook-square, .fa-instagram, .fa-shopping-cart {
     color: #ffffff
 }
 .nav-link{
-    font-weight: bold;
+    font-weight:500;
+    font-size: 17pt;
+}
+.bg{
+  background-color: #141110;
 }
 
-.bg{
-  background-color: #d9263b;
+.navbar-dark .navbar-nav .nav-link {
+    color: #f8d7b3;
+}
+
+.navbar-dark
+.navbar-nav
+.active>
+.nav-link,
+.navbar-dark
+.navbar-nav
+.nav-link.active,
+.navbar-dark
+.navbar-nav
+.nav-link.show,
+.navbar-dark
+.navbar-nav
+.show>.nav-link {
+  color:#efb270;
 }
