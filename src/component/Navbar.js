@@ -1,20 +1,70 @@
 import React, { Component } from "react";
 import { ButtonGroup, ToggleButton, Form, Button, Nav, FormControl, NavDropdown, Modal } from 'react-bootstrap';
 import './css/Navbar.css';
+import Menu from '../sites/Menu.js';
+import MiddleHomeScreen from '../component/MiddleHomeScreen.js';
+import AboutUs from '../sites/AboutUs.js'
+import $ from 'jquery';
+
 class Navbar extends Component{
 
   constructor(props){
     super(props);
     this.state = {
-      displayName: 'Home',
-      isOnLogPage: false,
-      isOnMessagePage: true,
-      inputUpdated: false,
-      showLogin: false,
-      showLogout: true,
-      notLoggedIn: false,
-      searchString: '',
+      isOnHomePage: true,
+      isOnMenuPage: false,
+      isAboutUsPage: false,
     }
+  }
+
+  resetStates() {
+    if (this.state.isOnHomePage){
+      this.state.isOnHomePage = false;
+    }
+    if (this.state.isOnMenuPage){
+      this.state.isOnMenuPage = false;
+    }
+
+    if (this.state.isAboutUsPage){
+      this.state.isAboutUsPage = false;
+    }
+  }
+
+  showHomePage(){
+    this.setState({isOnHomePage: false});
+    this.resetStates();
+    this.setState({
+      isOnHomePage: !this.state.isOnHomePage
+    })
+  }
+
+  showMenuPage(){
+    this.setState({isOnMenuPage: false});
+    this.resetStates();
+    this.setState({
+      isOnMenuPage: !this.state.isOnMenuPage
+    })
+  }
+
+  showAboutUsPage(){
+    this.setState({isAboutUsPage: false});
+    this.resetStates();
+    this.setState({
+      isAboutUsPage: !this.state.isAboutUsPage
+    })
+  }
+
+  componentDidMount() {
+    $(document).ready(function() {
+      $(".mr-auto .nav-item").bind( "click", function(event) {
+          event.preventDefault();
+          var clickedItem = $(this);
+          $(".mr-auto .nav-item").each( function() {
+              $(this).removeClass( "active" );
+          });
+          clickedItem.addClass( "active" );
+      });
+    });
   }
 
   render(){
@@ -29,13 +79,13 @@ class Navbar extends Component{
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto justify-content-end">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Hem<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#" onClick = {() => this.showHomePage()}>Hem<span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Menu</a>
+                <a class="nav-link" href="#" onClick = {() => this.showMenuPage()}>Meny</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Om oss</a>
+                <a class="nav-link" href="#" onClick = {() => this.showAboutUsPage()}>Om oss</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Kontakta oss</a>
@@ -45,9 +95,25 @@ class Navbar extends Component{
             <span className="badge" id='lblCartCount'> 0 </span>
           </div>
         </nav>
+
+      {this.state.isOnHomePage?
+        <MiddleHomeScreen/>
+      :null}
+
+      {this.state.isOnMenuPage?
+        <div>
+          <Menu/>
+        </div>
+      :null}
+
+      {this.state.isAboutUsPage?
+          <div>
+          <AboutUs/>
+          </div>
+      :null}
+
       </div>
     );
   }
 }
-
 export default Navbar;
