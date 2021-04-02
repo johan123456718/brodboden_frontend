@@ -20,27 +20,14 @@ class Navbar extends Component{
   render(){
     return (
       <div className="App">
-        <div class ="navbar navbar-expand-lg navbar-dark bg">
-          <a class="navbar-logo" href="#">
-            <img src="./images/brodbodenicon.png" class="rounded mx-auto d-block brodboden_icon" alt="Brödboden icon"/>
-          </a>
-        </div>
-
         <nav class="navbar navbar-expand-lg navbar-dark bg border-bottom border-secondary">
-
-        <a class = "icon-link" href = "https://www.instagram.com/brodboden/">
-          <i class="fa fa-instagram "/>
-        </a>
-
-        <a class = "icon-link" href = "https://www.facebook.com/brodboden">
-          <i class="fa fa-facebook-square"/>
-        </a>
+          <img src = "./images/brodbodenicon.jpeg" className = "brodboden_icon"/>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto justify-content-center">
+            <ul class="navbar-nav mr-auto justify-content-end">
               <li class="nav-item active">
                 <a class="nav-link" href="#">Hem<span class="sr-only">(current)</span></a>
               </li>
@@ -56,8 +43,6 @@ class Navbar extends Component{
             </ul>
             <i class="fa fa-shopping-cart"/>
             <span className="badge" id='lblCartCount'> 0 </span>
-            <div class="hiddenBox"/>
-            <div class="hiddenBox"/>
           </div>
         </nav>
       </div>

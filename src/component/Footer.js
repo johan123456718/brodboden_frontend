@@ -31,11 +31,15 @@ class Footer extends Component{
 
 
         <div class="col-md-6 mt-md-0 mt-3">
-
-
           <h5 class="text-uppercase">Footer Content</h5>
           <p>Here you can use rows and columns here to organize your footer content.</p>
+          <a class = "icon-link" href = "https://www.instagram.com/brodboden/">
+            <i class="fa fa-instagram "/>
+          </a>
 
+          <a class = "icon-link" href = "https://www.facebook.com/brodboden">
+            <i class="fa fa-facebook-square"/>
+          </a>
         </div>
 
 
