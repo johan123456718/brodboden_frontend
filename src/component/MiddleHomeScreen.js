@@ -22,19 +22,23 @@ class MiddleHomeScreen extends Component{
       <div className="App">
           <img src="./images/middlescreenimg.png" class="img-fluid" alt="Responsive image"/>
           <div class="centered">Tasty coffee</div>
+          <img src = "./images/brodbodenicon2.png" className = "brodboden_icon2" alt = "icon image"/>
+          <section class = "w3-container w3-center w3-content w3-light-grey container">
+            <div class = "float-left content">
+              <img src="./images/test.png" class="rounded float-left " alt="test"/>
+              <h3 className = "w3-justify-title">THE BAND</h3>
+              <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+            </div>
 
-          <section class = "w3-container w3-center w3-content w3-light-grey container">
-            <h2 class="w3-wide">THE BAND</h2>
-            <p class="w3-opacity"><i>We love music</i></p>
-            <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </section>
-          
-          <img src="./images/middlescreenimg.png" class="img-fluid" alt="Responsive image"/>
-          <div class="centered">Tasty coffee</div>
-          <section class = "w3-container w3-center w3-content w3-light-grey container">
-            <h2 class="w3-wide">THE BAND</h2>
-            <p class="w3-opacity"><i>We love music</i></p>
-            <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class = "float-left content">
+              <img src="./images/test.png" class="rounded float-left " alt="test"/>
+              <h3 className = "w3-justify-title">THE BAND</h3>
+              <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+            </div>
+
+            <div class = "float-right content">
+              <img src="./images/test2.png" class="rounded float-right " alt="test"/>
+            </div>
           </section>
       </div>
     );

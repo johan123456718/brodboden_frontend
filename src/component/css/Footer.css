@@ -1,12 +1,23 @@
 .pt-4{
-  background-color:#d9263b;
+  background-color:#141110;
+  border-top: 1px solid #222222;
+  width: 100%;
   color: white;
 }
 
 .py-3{
-  background-color: #ad2b3b;
+  background-color: #141110;
+  border-top: 1px solid #222222;
 }
 
 .footer-link{
   color: #ffffff;
+}
+
+.footer-link:hover{
+  color:#f8d7b3;
+}
+
+.text-uppercase{
+  color: #efb270;
 }

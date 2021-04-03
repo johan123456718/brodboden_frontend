@@ -9,5 +9,47 @@
 }
 
 .container{
-  max-width: 600px;
+  height: auto;
+  float:left;
+  width: 100%;
+}
+.img-fluid{
+    border-bottom: 3px solid #222222;
+}
+
+.w3-wide{
+  color: #efb270;
+}
+
+.w3-justify{
+  color: white;
+  font-size: 10pt;
+  width: 100%;
+  margin-left: 10%;
+}
+.w3-justify-title{
+  margin-left: 20%;
+  color: #efb270;
+  font-size: 20pt;
+}
+
+.content{
+   width:200px;
+   text-align:center;
+   display:block;
+   background-color: transparent;
+   border: 1px solid transparent;
+   margin-right: 10px;
+   margin-bottom: 1px;
+   margin-left: 5%;
+   float:left;
+}
+
+.w3-opacity{
+  color: white;
+}
+
+.brodboden_icon2{
+  height: 80px;
+  width: 550px;
 }

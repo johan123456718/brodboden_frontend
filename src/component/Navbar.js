@@ -3,7 +3,8 @@ import { ButtonGroup, ToggleButton, Form, Button, Nav, FormControl, NavDropdown,
 import './css/Navbar.css';
 import Menu from '../sites/Menu.js';
 import MiddleHomeScreen from '../component/MiddleHomeScreen.js';
-import AboutUs from '../sites/AboutUs.js'
+import AboutUs from '../sites/AboutUs.js';
+import ContactUs from '../sites/ContactUs.js';
 import $ from 'jquery';
 
 class Navbar extends Component{
@@ -14,6 +15,7 @@ class Navbar extends Component{
       isOnHomePage: true,
       isOnMenuPage: false,
       isAboutUsPage: false,
+      isContactUsPage: false,
     }
   }
 
@@ -27,6 +29,10 @@ class Navbar extends Component{
 
     if (this.state.isAboutUsPage){
       this.state.isAboutUsPage = false;
+    }
+
+    if (this.state.isContactUsPage){
+      this.state.isContactUsPage = false;
     }
   }
 
@@ -54,6 +60,14 @@ class Navbar extends Component{
     })
   }
 
+  showContactUsPage(){
+    this.setState({isContactUsPage: false});
+    this.resetStates();
+    this.setState({
+      isContactUsPage: !this.state.isContactUsPage
+    })
+  }
+
   componentDidMount() {
     $(document).ready(function() {
       $(".mr-auto .nav-item").bind( "click", function(event) {
@@ -71,7 +85,9 @@ class Navbar extends Component{
     return (
       <div className="App">
         <nav class="navbar navbar-expand-lg navbar-dark bg border-bottom border-secondary">
-          <img src = "./images/brodbodenicon.jpeg" className = "brodboden_icon"/>
+          <a href="./App.js">
+            <img src = "./images/brodbodenicon.jpeg" className = "brodboden_icon"/>
+          </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -88,7 +104,7 @@ class Navbar extends Component{
                 <a class="nav-link" href="#" onClick = {() => this.showAboutUsPage()}>Om oss</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Kontakta oss</a>
+                <a class="nav-link" href="#" onClick = {() => this.showContactUsPage()}>Kontakta oss</a>
               </li>
             </ul>
             <i class="fa fa-shopping-cart"/>
@@ -101,17 +117,20 @@ class Navbar extends Component{
       :null}
 
       {this.state.isOnMenuPage?
-        <div>
-          <Menu/>
-        </div>
+          <div>
+            <Menu/>
+          </div>
       :null}
 
       {this.state.isAboutUsPage?
           <div>
-          <AboutUs/>
+            <AboutUs/>
           </div>
       :null}
 
+      {this.state.isContactUsPage?
+          <ContactUs/>
+      :null}
       </div>
     );
   }

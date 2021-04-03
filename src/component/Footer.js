@@ -20,7 +20,7 @@ class Footer extends Component{
   render(){
     return (
       <div className="App">
-  <footer class="page-footer font-small blue pt-4">
+      <footer class="page-footer font-small blue pt-4 float-left">
 
 
       <div class="container-fluid text-center text-md-left">
@@ -31,7 +31,7 @@ class Footer extends Component{
 
           <div class="col-md-6 mt-md-0 mt-3">
             <h5 class="text-uppercase">Footer Content</h5>
-            <p>Here you can use rows and columns here to organize your footer content.</p>
+            <p class = "footer-content">Here you can use rows and columns here to organize your footer content.</p>
             <a class = "icon-link" href = "https://www.instagram.com/brodboden/">
               <i class="fa fa-instagram "/>
             </a>
@@ -93,14 +93,9 @@ class Footer extends Component{
 
 
         </div>
-
-
       </div>
-
       <div class="footer-copyright text-center py-3">© 2021 Copyright: Johan Challita
       </div>
-
-
     </footer>
       </div>
     );
