@@ -15,7 +15,7 @@ class App extends Component{
 
   componentDidMount() {
     var distance = $('.App').offset().top;
-    $(window).scroll(function() {
+    $(document).scroll(function() {
       if ($(this).scrollTop() > distance) {
         // > 100px from top - show div
           $('#blue-box').fadeIn("slow");
