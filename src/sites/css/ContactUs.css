@@ -1,0 +1,28 @@
+.contactUs-container{
+  height: 100%;
+  width: 100%;
+}
+
+.rightWindow{
+  float:right;
+  margin: 0;
+  padding-right: 15%;
+  padding-top: 2%;
+  color: #ffffff;
+}
+
+.leftWindow{
+  float:left;
+  margin: 0;
+  padding-left: 4%;
+  padding-top: 2%;
+  color: #ffffff;
+}
+
+.titleForAddress, .dropUsText{
+  color: #efb270;
+}
+
+.rightSubWindow{
+  padding-top: 15%;
+}
