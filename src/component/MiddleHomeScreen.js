@@ -64,7 +64,7 @@ class MiddleHomeScreen extends Component{
           </div>
 
           <div class = "float-right content">
-            <img src="./images/test2.png" class="rounded float-right " alt="test"/>
+            <img src="./images/openhours.png" class="open-hours-img" alt="test"/>
           </div>
         </section>
       </div>
