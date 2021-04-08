@@ -1,0 +1,21 @@
+.aboutUs-container{
+  height: 100%;
+  width: 100%;
+  color:white;
+}
+
+.titleForAddress, .dropUsText{
+  color: #efb270;
+}
+
+.aboutUs-title{
+   color: #efb270;
+}
+.content-aboutUs{
+  width: 20%;
+}
+
+.img-aboutUs{
+  height: 400px;
+  width: 400px;
+}
