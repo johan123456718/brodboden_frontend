@@ -23,7 +23,7 @@ class ContactUs extends Component{
             <h3 className = "titleForAddress"> Kontakta oss</h3>
             <p>Använd formuläret nedan för att skicka ett meddelande till oss. Vi svarar inom 1-2 arbetsdagar</p>
             <p>Du kan också skicka ett e-postmeddelande till oss när som helst eller ring oss, tveka inte att höra av dig!</p>
-            <div className = "rightSubWindow">
+            <div className = "leftSubWindow">
             <h3 className = "dropUsText">Skicka ett meddelande till oss</h3>
             <form>
                 <div class="form-group">
@@ -31,12 +31,12 @@ class ContactUs extends Component{
                   <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ditt namn"/>
                 </div>
                 <div class="form-group">
-                  <label for="exampleFormControlInput1">Email adress</label>
+                  <label for="exampleFormControlInput1">Din Email adress</label>
                   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleFormControlTextarea1">Ditt meddelande/kommentar</label>
+                  <label for="exampleFormControlTextarea1">Ditt meddelande</label>
                   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Ditt meddelande"></textarea>
                 </div>
                   <button type="submit" class="btn btn-primary">Skicka</button>
@@ -52,7 +52,7 @@ class ContactUs extends Component{
               <p>Nymärsta torg 5, 195 30 Märsta</p>
             </div>
 
-            <div className = "rightSubWindow float-right">
+            <div className = "float-right">
               <i class="fa fa-phone fa-lg" aria-hidden="true"/>
               <h4> Telefon </h4>
               <p>08-591 211 35</p>

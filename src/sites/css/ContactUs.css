@@ -6,7 +6,7 @@
 .rightWindow{
   float:right;
   margin: 0;
-  padding-right: 15%;
+  padding-right: 10%;
   padding-top: 2%;
   color: #ffffff;
 }
@@ -15,6 +15,7 @@
   float:left;
   margin: 0;
   padding-left: 4%;
+  width: 40%;
   padding-top: 2%;
   color: #ffffff;
 }
@@ -23,6 +24,6 @@
   color: #efb270;
 }
 
-.rightSubWindow{
+.leftSubWindow{
   padding-top: 15%;
 }
