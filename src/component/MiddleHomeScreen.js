@@ -19,6 +19,7 @@ class MiddleHomeScreen extends Component{
   render(){
     return (
       <div className="App">
+
         <div class = "slideshow-container">
           <div class = "w-100 h-75">
             <div id="my-slider" class="carousel slide" data-ride="carousel" data-interval="2500">
@@ -49,6 +50,7 @@ class MiddleHomeScreen extends Component{
             </div>
           </div>
         </div>
+
         <img src = "./images/brodbodenicon2.png" className = "brodboden_icon2" alt = "icon image"/>
         <section class = "w3-container w3-center w3-content w3-light-grey container">
           <div class = "float-left content">
