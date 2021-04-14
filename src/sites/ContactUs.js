@@ -59,7 +59,7 @@ class ContactUs extends Component{
 
               <i class="fa fa-envelope fa-lg" aria-hidden="true"/>
               <h4> Email </h4>
-              <p>yyyy@hotmail.com</p>
+              <p>brodboden@hotmail.com</p>
             </div>
             <div class="justify-content-center">
               <iframe src="http://maps.google.com/maps?q=59.620010,17.855660&z=16&output=embed" height="450" width="500" class = "d-flex justify-content-center"></iframe>

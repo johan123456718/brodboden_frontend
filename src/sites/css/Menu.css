@@ -1,0 +1,10 @@
+.drinkMenuWindow, .foodMenuWindow, .saladMenuWindow, .desertMenuWindow{
+  padding-top: 2%;
+  width: 100%;
+  color: #ffffff;
+}
+
+.kaffeochdryck_img, .mat_img, .desert_img{
+  height: 134px;
+  width: 832px;
+}
