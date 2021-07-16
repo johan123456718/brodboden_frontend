@@ -1,10 +1,43 @@
-.drinkMenuWindow, .foodMenuWindow, .saladMenuWindow, .desertMenuWindow{
-  padding-top: 2%;
-  width: 100%;
+.menuContainer{
+  float:none;
+  height: 100%;
   color: #ffffff;
+  padding-top: 1%;
+  overflow-x: hidden;
 }
 
-.kaffeochdryck_img, .mat_img, .desert_img{
-  height: 134px;
-  width: 832px;
+.coffeeAndDrink_img, .salad_img, .food_img, .desert_img{
+  height: 167px;
+  width: 400px;
+}
+
+.itemTextInliner{
+  font-size: 25px;
+  display: inline;
+  padding: 5px;
+}
+
+.lineBetweenItem{
+  overflow: hidden;
+  color: #a78055;
+  font-size: 20px;
+}
+
+.itemPriceColor{
+  color: #efb270;
+}
+
+.item_description, .item_time{
+  font-size: 20px;
+}
+
+.item_description_container{
+  width: 80%;
+  margin: auto;
+}
+
+.item_pic{
+  height: 70px;
+  weight: 30px;
+  border-radius: 50%;
 }
