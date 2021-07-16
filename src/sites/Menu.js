@@ -109,64 +109,75 @@ class Menu extends Component{
     }else{
 
       return (
-        <div className="App">
-          <div>
-            <img src = "./images/kaffeochdryck.png" className = "kaffeochdryck_img" alt = "coffee and drink image"/>
-            <div class = "row">
-              <div class = "col text-white">
-                <div class = "drinkMenuWindow">
-                  {
-                    drinks.map((item) =>
-                      <div>
-                        <h3> {item.drink_title} </h3>
-                        <p> Pris: {item.price}:-</p>
-                        <p> {item.description} </p>
-                      </div>
-                    )
-                  }
-                </div>
-
-                <img src = "./images/mat.png" className = "mat_img" alt = "food image"/>
-                <div class = "foodMenuWindow">
-                {
+        <div class="menuContainer">
+          <div class="row">
+            <div class="col">
+              <img src = "./images/kaffeochdryck.png" className = "coffeeAndDrink_img" alt = "coffee and drink image"/>
+              {
+                drinks.map((item) =>
+                  <div>
+                   <img src = {item.picture_data} class = "item_pic" alt = "food image"/>
+                   <strong className = "itemTextInliner">{item.drink_title}</strong>
+                   <span className = "itemTextInliner lineBetweenItem">.......................................................................................</span>
+                   <p className = "itemTextInliner itemPriceColor">{item.price} kr</p>
+                   <div class = "item_description_container">
+                    <p className = "item_description">{item.description} </p>
+                   </div>
+                 </div>
+                )
+              }
+            </div>
+            <div class="col">
+              <img src = "./images/mat.png" className = "coffeeAndDrink_img" alt = "food image"/>
+              {
                   foods.map((item) =>
                     <div>
-                      <h3> {item.food_title} </h3>
-                      <p> Pris: {item.price}:-</p>
-                      <p>{item.description} </p>
-                      {item.time?
-                      <p> {item.time} </p>
-                      :null}
+                      <img src = {item.picture_data} class = "item_pic" alt = "item image"/>
+                      <strong className = "itemTextInliner"> {item.food_title} </strong>
+                      <span className = "itemTextInliner lineBetweenItem">.......................................................................................</span>
+                      <p className = "itemTextInliner itemPriceColor">{item.price} kr</p>
+                      <div class = "item_description_container">
+                        <p className = "item_description">{item.description} </p>
+                        {item.time?
+                        <p className = "item_time"> Tid: {item.time} </p>
+                        :null}
+                      </div>
                     </div>
                   )
-                }
-
-                <img src = "./images/mat.png" className = "mat_img" alt = "food image"/>
-                <div class = "saladMenuWindow">
-                {
-                  salads.map((item) =>
-                    <div>
-                      <h3> {item.salad_title} </h3>
-                      <p> Pris: {item.price}:-</p>
-                      <p>{item.description} </p>
-                    </div>
-                  )
-                }
-                </div>
-                <img src = "./images/desert.png" className = "desert_img" alt = "food image"/>
-                <div class = "desertMenuWindow">
-                {
-                  desert.map((item) =>
-                    <div>
-                      <h3> {item.desert_title} </h3>
-                      <p> Pris: {item.price}:-</p>
-                      <p>{item.description} </p>
-                    </div>
-                  )
-                }
-                </div>
-                </div>
-              </div>
+              }
+            </div>
+            <div class="w-100 h-25"></div>
+            <div class="col">
+              <img src = "./images/sallad.png" className = "salad_img" alt = "salad image"/>
+              {
+                 salads.map((item) =>
+                   <div>
+                     <img src = {item.picture_data} class = "item_pic" alt = "item image"/>
+                     <strong className = "itemTextInliner"> {item.salad_title} </strong>
+                     <span className = "itemTextInliner lineBetweenItem">.......................................................................................</span>
+                     <p className = "itemTextInliner itemPriceColor">{item.price} kr</p>
+                     <div class = "item_description_container">
+                      <p className = "item_description">{item.description} </p>
+                     </div>
+                   </div>
+                 )
+              }
+            </div>
+            <div class="col">
+              <img src = "./images/desert.png" className = "desert_img" alt = "desert image"/>
+              {
+                 desert.map((item) =>
+                   <div>
+                     <img src = {item.picture_data} class = "item_pic" alt = "item image"/>
+                     <strong className = "itemTextInliner"> {item.desert_title} </strong>
+                     <span className = "itemTextInliner lineBetweenItem">.......................................................................................</span>
+                     <p className = "itemTextInliner itemPriceColor">{item.price} kr</p>
+                     <div class = "item_description_container">
+                      <p className = "item_description">{item.description} </p>
+                     </div>
+                   </div>
+                 )
+               }
             </div>
           </div>
         </div>
