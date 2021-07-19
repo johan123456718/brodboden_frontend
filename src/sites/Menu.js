@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import { Button } from 'react-bootstrap';
 import './css/Menu.css';
+
 class Menu extends Component{
 
   constructor(props){
@@ -10,6 +12,11 @@ class Menu extends Component{
       desert:[],
       salads:[],
       isLoaded: false,
+      visible: false,
+      currentTitle: "",
+      currentPrice: 0,
+      currentTime: "",
+      currentImg: "",
     }
   }
 
@@ -100,6 +107,26 @@ class Menu extends Component{
       )
   }
 
+  sendToCart(item){
+    this.state.currentImg = item.picture_data;
+
+    if(item.time !== undefined){
+      this.state.currentTitle = item.title;
+      this.state.currentPrice = item.price;
+      this.state.currentDescription = item.description;
+      this.state.currentTime = item.time;
+      console.log(item.title + " price: " + item.price + " description: " + item.description + " time: " + item.time);
+    }else{
+      this.state.currentTitle = item.title;
+      this.state.currentPrice = item.price;
+      this.state.currentDescription = item.description;
+      console.log(item.title + " price: " + item.price + " description: " + item.description);
+    }
+    this.props.incrementNumberOfItems();
+    this.setState({visible: true});
+    setTimeout(() => this.setState({ visible: false}), 3000);
+  }
+
   render(){
     const {error, isLoaded, drinks, foods, desert, salads} = this.state;
     if(error){
@@ -111,29 +138,42 @@ class Menu extends Component{
       return (
         <div class="menuContainer">
           <div class="row">
+
             <div class="col">
               <img src = "./images/kaffeochdryck.png" className = "coffeeAndDrink_img" alt = "coffee and drink image"/>
               {
                 drinks.map((item) =>
                   <div>
                    <img src = {item.picture_data} class = "item_pic" alt = "food image"/>
-                   <strong className = "itemTextInliner">{item.drink_title}</strong>
+                   <strong className = "itemTextInliner">{item.title}</strong>
                    <span className = "itemTextInliner lineBetweenItem">.......................................................................................</span>
                    <p className = "itemTextInliner itemPriceColor">{item.price} kr</p>
                    <div class = "item_description_container">
                     <p className = "item_description">{item.description} </p>
+                    <Button variant="outline-secondary" onClick = {() => this.sendToCart(item)}>Lägg i kundvagnen</Button>
                    </div>
+
                  </div>
                 )
               }
             </div>
             <div class="col">
-              <img src = "./images/mat.png" className = "coffeeAndDrink_img" alt = "food image"/>
+
+              <div className={this.state.visible?'topcorner fadeIn': 'topcorner fadeOut'}>
+                <img src = {this.state.currentImg} class = "item_pic" alt = "food image"/>
+                <p>Vald vara: {this.state.currentTitle}</p>
+                <p>Pris: {this.state.currentPrice}</p>
+                {this.state.currentTime?
+                <p> Tid: {this.state.currentTime} </p>
+                :null}
+              </div>
+
+              <img src = "./images/mat.png" className = "food_img" alt = "food image"/>
               {
                   foods.map((item) =>
                     <div>
                       <img src = {item.picture_data} class = "item_pic" alt = "item image"/>
-                      <strong className = "itemTextInliner"> {item.food_title} </strong>
+                      <strong className = "itemTextInliner"> {item.title} </strong>
                       <span className = "itemTextInliner lineBetweenItem">.......................................................................................</span>
                       <p className = "itemTextInliner itemPriceColor">{item.price} kr</p>
                       <div class = "item_description_container">
@@ -141,6 +181,8 @@ class Menu extends Component{
                         {item.time?
                         <p className = "item_time"> Tid: {item.time} </p>
                         :null}
+
+                        <Button variant="outline-secondary" onClick = {() => this.sendToCart(item)}>Lägg i kundvagnen</Button>
                       </div>
                     </div>
                   )
@@ -153,11 +195,12 @@ class Menu extends Component{
                  salads.map((item) =>
                    <div>
                      <img src = {item.picture_data} class = "item_pic" alt = "item image"/>
-                     <strong className = "itemTextInliner"> {item.salad_title} </strong>
+                     <strong className = "itemTextInliner"> {item.title} </strong>
                      <span className = "itemTextInliner lineBetweenItem">.......................................................................................</span>
                      <p className = "itemTextInliner itemPriceColor">{item.price} kr</p>
                      <div class = "item_description_container">
                       <p className = "item_description">{item.description} </p>
+                      <Button variant="outline-secondary" onClick = {() => this.sendToCart(item)}>Lägg i kundvagnen</Button>
                      </div>
                    </div>
                  )
@@ -169,11 +212,12 @@ class Menu extends Component{
                  desert.map((item) =>
                    <div>
                      <img src = {item.picture_data} class = "item_pic" alt = "item image"/>
-                     <strong className = "itemTextInliner"> {item.desert_title} </strong>
+                     <strong className = "itemTextInliner"> {item.title} </strong>
                      <span className = "itemTextInliner lineBetweenItem">.......................................................................................</span>
                      <p className = "itemTextInliner itemPriceColor">{item.price} kr</p>
                      <div class = "item_description_container">
                       <p className = "item_description">{item.description} </p>
+                      <Button variant="outline-secondary" onClick = {() => this.sendToCart(item)}>Lägg i kundvagnen</Button>
                      </div>
                    </div>
                  )

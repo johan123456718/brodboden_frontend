@@ -6,16 +6,28 @@ import MiddleHomeScreen from '../component/MiddleHomeScreen.js';
 import AboutUs from '../sites/AboutUs.js';
 import ContactUs from '../sites/ContactUs.js';
 import $ from 'jquery';
-
+import { instanceOf } from "prop-types";
+import { withCookies, Cookies } from "react-cookie";
 class Navbar extends Component{
-
+  static propTypes = {
+    cookies: instanceOf(Cookies).isRequired
+  };
   constructor(props){
     super(props);
+    const { cookies } = props;
     this.state = {
       isOnHomePage: true,
       isOnMenuPage: false,
       isAboutUsPage: false,
       isContactUsPage: false,
+      numberOfItems: Number(cookies.get("numberOfItems")),
+    }
+    this.isNumberOfItemsEmpty();
+  }
+
+  isNumberOfItemsEmpty(){
+    if(isNaN(this.state.numberOfItems)){
+      this.state.numberOfItems = 0;
     }
   }
 
@@ -68,6 +80,12 @@ class Navbar extends Component{
     })
   }
 
+  incrementNumberOfItems(){
+    const { cookies } = this.props;
+    this.setState({numberOfItems: this.state.numberOfItems + 1});
+    cookies.set("numberOfItems", 1 + this.state.numberOfItems, { path: "/", maxAge: 3600});
+  }
+
   componentDidMount() {
     $(document).ready(function() {
       $(".mr-auto .nav-item").bind( "click", function(event) {
@@ -108,7 +126,7 @@ class Navbar extends Component{
               </li>
             </ul>
             <i class="fa fa-shopping-cart"/>
-            <span className="badge" id='lblCartCount'> 0 </span>
+            <span className="badge" id='lblCartCount'> {this.state.numberOfItems} </span>
           </div>
         </nav>
 
@@ -118,7 +136,7 @@ class Navbar extends Component{
 
       {this.state.isOnMenuPage?
           <div>
-            <Menu/>
+            <Menu incrementNumberOfItems = {() => this.incrementNumberOfItems()}/>
           </div>
       :null}
 
@@ -135,4 +153,4 @@ class Navbar extends Component{
     );
   }
 }
-export default Navbar;
+export default withCookies(Navbar);
