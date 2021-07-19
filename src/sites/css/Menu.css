@@ -35,9 +35,34 @@
   width: 80%;
   margin: auto;
 }
+.btn-outline-secondary{
+  border-color: #efb270;
+  color: #efb270;
+}
 
 .item_pic{
   height: 70px;
   weight: 30px;
   border-radius: 50%;
+}
+
+.topcorner{
+   position: fixed;
+   top: 1;
+   right:0;
+   background: #a78055;
+   height: 30%;
+   width: 30%;
+   z-index: 1;
+   border-radius: 10px;
+}
+
+.fadeOut{
+     opacity:0;
+     transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+}
+
+.fadeIn{
+     opacity:1;
+     transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
 }
