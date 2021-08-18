@@ -5,9 +5,11 @@ import Menu from '../sites/Menu.js';
 import MiddleHomeScreen from '../component/MiddleHomeScreen.js';
 import AboutUs from '../sites/AboutUs.js';
 import ContactUs from '../sites/ContactUs.js';
+import SideBar from '../component/SideBar.js';
 import $ from 'jquery';
 import { instanceOf } from "prop-types";
 import { withCookies, Cookies } from "react-cookie";
+
 class Navbar extends Component{
   static propTypes = {
     cookies: instanceOf(Cookies).isRequired
@@ -15,14 +17,19 @@ class Navbar extends Component{
   constructor(props){
     super(props);
     const { cookies } = props;
+    const itemSelectedData = cookies.get("itemSelected");
     this.state = {
       isOnHomePage: true,
       isOnMenuPage: false,
       isAboutUsPage: false,
       isContactUsPage: false,
       numberOfItems: Number(cookies.get("numberOfItems")),
+      isSideBarOpen: false,
+      itemSelected: itemSelectedData ? itemSelectedData : [],
     }
     this.isNumberOfItemsEmpty();
+    this.showSideBar = this.showSideBar.bind(this);
+    this.closeSideBar = this.closeSideBar.bind(this);
   }
 
   isNumberOfItemsEmpty(){
@@ -45,6 +52,10 @@ class Navbar extends Component{
 
     if (this.state.isContactUsPage){
       this.state.isContactUsPage = false;
+    }
+
+    if (this.state.isSideBarOpen){
+      this.state.isSideBarOpen = false;
     }
   }
 
@@ -86,6 +97,37 @@ class Navbar extends Component{
     cookies.set("numberOfItems", 1 + this.state.numberOfItems, { path: "/", maxAge: 3600});
   }
 
+  decrementNumberOfItems(){
+    const { cookies } = this.props;
+    this.setState({numberOfItems: this.state.numberOfItems - 1});
+    cookies.set("numberOfItems", 1 + this.state.numberOfItems, { path: "/", maxAge: 3600});
+  }
+
+  sendObjectToCart(item){
+    const { cookies } = this.props;
+    this.state.itemSelected.push(item);
+    cookies.set("itemSelected", JSON.stringify(this.state.itemSelected), { path: "/", maxAge: 3600});
+  }
+
+  saveItemSelected(e){
+    const { cookies } = this.props;
+    cookies.set("itemSelected", JSON.stringify(e), { path: "/", maxAge: 3600});
+  }
+
+  showSideBar(open){
+    this.setState({ isSideBarOpen: open });
+    if(this.state.isSideBarOpen == false){
+      document.body.style.overflowY = "hidden";
+    }else{
+      document.body.style.overflowY = "scroll";
+    }
+  }
+
+  closeSideBar(){
+    this.setState({ isSideBarOpen: false });
+    document.body.style.overflowY = "scroll";
+  }
+
   componentDidMount() {
     $(document).ready(function() {
       $(".mr-auto .nav-item").bind( "click", function(event) {
@@ -125,7 +167,7 @@ class Navbar extends Component{
                 <a class="nav-link" href="#" onClick = {() => this.showContactUsPage()}>Kontakta oss</a>
               </li>
             </ul>
-            <i class="fa fa-shopping-cart"/>
+            <i class="fa fa-shopping-cart" onClick = {() => this.showSideBar(true)}/>
             <span className="badge" id='lblCartCount'> {this.state.numberOfItems} </span>
           </div>
         </nav>
@@ -136,9 +178,19 @@ class Navbar extends Component{
 
       {this.state.isOnMenuPage?
           <div>
-            <Menu incrementNumberOfItems = {() => this.incrementNumberOfItems()}/>
+            <Menu incrementNumberOfItems = {() => this.incrementNumberOfItems()} sendObjectToCart = {(e) => this.sendObjectToCart(e)}/>
           </div>
       :null}
+
+      <div className = {this.state.isSideBarOpen?'fadeIn':'fadeOut'}>
+        {this.state.isSideBarOpen?
+            <SideBar open = {this.state.isSideBarOpen} onSetOpen = {this.showSideBar} onClose = {this.closeSideBar}
+            itemSelected = {this.state.itemSelected}
+            decrementNumberOfItems = {() => this.decrementNumberOfItems()}
+            incrementNumberOfItems = {() => this.incrementNumberOfItems()}
+            saveItemSelected = {(e) => this.saveItemSelected(e)}/>
+        :null}
+      </div>
 
       {this.state.isAboutUsPage?
           <div>

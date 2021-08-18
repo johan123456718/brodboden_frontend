@@ -123,16 +123,29 @@ class Menu extends Component{
       console.log(item.title + " price: " + item.price + " description: " + item.description);
     }
     this.props.incrementNumberOfItems();
+    this.props.sendObjectToCart(item);
     this.setState({visible: true});
     setTimeout(() => this.setState({ visible: false}), 3000);
+  }
+
+  reloadPage(){
+    window.location.reload(false);
   }
 
   render(){
     const {error, isLoaded, drinks, foods, desert, salads} = this.state;
     if(error){
-       return <div>Kunde inte ladda in datat</div>
+       return (
+        <div>
+          <Button variant="outline-secondary" onClick = {() => this.reloadPage()}>Ladda om sidan?</Button>
+        </div>
+      )
     }if (!isLoaded) {
-      return <div>Loading ...</div>
+      return (
+        <div class="spinner-border text-light" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      )
     }else{
 
       return (
