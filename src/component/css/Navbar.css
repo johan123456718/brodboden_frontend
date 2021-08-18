@@ -83,3 +83,11 @@
 .show>.nav-link {
   color:#efb270;
 }
+
+.fadeOut{
+   opacity: 0;
+}
+.fadeIn{
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}

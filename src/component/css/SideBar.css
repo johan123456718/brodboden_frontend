@@ -1,0 +1,57 @@
+
+.sideBarNav{
+    border-bottom: 1px solid #000000;
+    padding: 5%;
+    margin: 0%;
+    text-align: left;
+}
+
+.itemSelected_div{
+  padding: 5%;
+  overflow: auto;
+}
+
+.sidebar_item_pic{
+  height: 70px;
+  weight: 50px;
+  border-radius: 50%;
+}
+
+.sidebar_img_div{
+  float:left;
+  width: 50%;
+  padding-top: 5%;
+}
+.sidebar_content_div{
+  padding: 5%;
+}
+
+.sidebar_checkoutButtonDiv{
+  padding: 5%;
+}
+
+.sidebar_checkoutButton{
+  width: 200px;
+  border: none;
+  color: white;
+  box-shadow: inset 0 0 0 0 #000;
+  transition: ease-out 0.1s;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+.sidebar_checkoutButton:hover{
+   box-shadow: inset 200px 0 0 0 #000;
+   color: white;
+   cursor: pointer;
+}
+
+.sidebar_col{
+  border-bottom: 1px solid #000000;
+  float:left;
+}
+
+.sidebar_quantity{
+  width: 50%;
+  float:right;
+}
