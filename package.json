@@ -6,8 +6,6 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "@fortawesome:registry=https://npm.fontawesome.com/
-    //npm.fontawesome.com/:_authToken=0f9aa309-3a37-44a8-b539-3200a6b51b90",
     "jquery": "^3.6.0",
     "react": "^17.0.2",
     "react-bootstrap": "^1.5.2",
